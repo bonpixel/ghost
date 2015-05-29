@@ -9,21 +9,17 @@ config = {
     development: {
         // The url to use when providing links to the site, E.g. in RSS and email.
         url: 'http://blog.bonpixel.com',
-
-        // Example mail config
-        // Visit http://docs.ghost.org/mail for instructions
-        // ```
-        //  mail: {
-        //      transport: 'SMTP',
-        //      options: {
-        //          service: 'Mailgun',
-        //          auth: {
-        //              user: '', // mailgun username
-        //              pass: ''  // mailgun password
-        //          }
-        //      }
-        //  },
-        // ```
+	
+	mail: {
+              transport: 'SMTP',
+              options: {
+                  service: 'Mailgun',
+                  auth: {
+                      user: 'postmaster@mg.bonpixel.com', // mailgun username
+                      pass: '0444347ec7382a895bc4a972b3ec4674'  // mailgun password
+                  }
+              }
+          },
 
         database: {
             client: 'sqlite3',
@@ -45,7 +41,16 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'http://blog.bonpixel.com',
-        mail: {},
+        mail: {
+            transport: 'SMTP',
+            options: {
+                service: 'Mailgun',
+                auth: {
+                    user: 'postmaster@mg.bonpixel.com', // mailgun username
+                    pass: '0444347ec7382a895bc4a972b3ec4674'  // mailgun password
+                }
+            }
+        },
         database: {
             client: 'sqlite3',
             connection: {
